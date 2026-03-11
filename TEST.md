@@ -1,27 +1,33 @@
 # Cuestionario de Evaluación: Comunicación por Sockets 📝
 
-**Nombre del Estudiante:** _______________________
-**Fecha:** _______________________
+**Nombre del Estudiante:** Adriana Murcia 
+**Fecha:** 11-03-2026
 
 *Instrucciones: Responde a las siguientes preguntas basándote en la teoría de redes y en el análisis del código de nuestro proyecto. Sube este archivo con tus respuestas a tu repositorio como evidencia de trabajo.*
 
 1. **¿Qué es una Dirección IP y para qué sirve en nuestro proyecto?**
-   > *Tu respuesta aquí*
+   > Una Dirección IP es un número único que identifica a un dispositivo dentro de una red. Funciona como la “dirección” de una computadora o dispositivo para que otros puedan encontrarlo y comunicarse con él.
+En nuestro proyecto, la IP sirve para que la computadora se conecte con la ESP32 a través de la red WiFi y puedan enviarse datos entre sí .
 
 2. **¿Qué es un Puerto de red? (Menciona qué puerto estamos usando en el código de la ESP32).**
-   > *Tu respuesta aquí*
+   > Un Puerto de red es un número que identifica un canal específico de comunicación dentro de un dispositivo conectado a la red. Permite que varios programas usen la red al mismo tiempo sin confundirse.
+En nuestro proyecto, la ESP32 abre un puerto para escuchar conexiones desde la computadora. El puerto que usamos en el código es 80
 
 3. **Define con tus propias palabras qué es un Servidor en informática.**
-   > *Tu respuesta aquí*
+   > Un Servidor es un dispositivo o programa que espera conexiones de otros dispositivos y les proporciona información o servicios a través de una red.
+Por ejemplo, puede enviar datos, guardar información o controlar dispositivos cuando lo solicita.
 
 4. **¿Cuál es la diferencia entre un "Servidor" (Hardware/Software) y un "Servicio" (Service)?**
-   > *Tu respuesta aquí*
+   > *Un Servidor es el sistema (computadora o programa) que recibe solicitudes de otros dispositivos.
+Un Servicio es la función o tarea específica que el servidor ofrece.
 
 5. **Investigación: ¿Cuál es la diferencia técnica entre un "Socket TCP" normal y un "WebSocket"?**
-   > *Tu respuesta aquí*
+   > Un Socket TCP normal es una conexión directa entre dos dispositivos que envían y reciben datos continuamente usando el protocolo TCP. Se usa mucho en programas y aplicaciones personalizadas.
+
+Un WebSocket es un protocolo que funciona sobre HTTP y permite una comunicación bidireccional en tiempo real entre un navegador web y un servidor.
 
 6. **Analizando nuestro código: ¿Quién actúa como Servidor y quién actúa como Cliente? (Justifica tu respuesta mencionando qué funciones del código lo demuestran, ej. `bind()`, `connect()`).**
-   > *Tu respuesta aquí*
+   > En nuestro proyecto, la ESP32 actúa como servidor porque abre un puerto y espera que alguien se conecte. Esto se demuestra con funciones como bind() y listen(), que preparan el dispositivo para recibir conexiones.
 
 7. **En el código de la computadora (Python), importamos la librería `threading` (Hilos). ¿Qué pasaría con la ventana de Tkinter si no usáramos hilos para recibir los datos de la red?**
    > *Tu respuesta aquí*
