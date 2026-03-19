@@ -30,13 +30,24 @@ Un WebSocket es un protocolo que funciona sobre HTTP y permite una comunicación
    > En nuestro proyecto, la ESP32 actúa como servidor porque abre un puerto y espera que alguien se conecte. Esto se demuestra con funciones como bind() y listen(), que preparan el dispositivo para recibir conexiones.
 
 7. **En el código de la computadora (Python), importamos la librería `threading` (Hilos). ¿Qué pasaría con la ventana de Tkinter si no usáramos hilos para recibir los datos de la red?**
-   > *Tu respuesta aquí*
+   > Si no se usaran hilos, la ventana de Tkinter se bloquearía o se congelaría mientras el programa espera recibir datos de la red. Esto haría que la interfaz deje de responder (no se podría hacer clic ni cerrar la ventana), ya que todo el proceso estaría ocupando el mismo flujo de ejecución.
 
 8. **¿Por qué es necesario usar bloques `try...except` cuando trabajamos con conexiones de red e Internet?**
-   > *Tu respuesta aquí*
+   > Es necesario usar bloques try...except porque las conexiones de red pueden fallar en cualquier momento (por ejemplo, pérdida de conexión, errores del servidor o datos incorrectos). Estos bloques permiten manejar los errores sin que el programa se cierre inesperadamente, mostrando mensajes adecuados y manteniendo la aplicación funcionando correctamente.
 
 9. **En la función de encender el LED en Python, enviamos el comando así: `sock.send(b'ON')`. ¿Qué significa esa letra `b` antes de las comillas y por qué no enviamos un texto normal?**
-   > *Tu respuesta aquí*
+   > La letra b antes de las comillas indica que el mensaje está en formato de bytes. Esto es necesario porque las conexiones de red (sockets) solo pueden enviar y recibir datos en forma de bytes, no como texto normal (strings). Por eso no se envía un texto común, sino su representación en bytes para que pueda ser interpretado correctamente por el dispositivo receptor.
 
-10. **Describe brevemente el flujo de datos: ¿Qué camino recorre la información desde que giras el potenciómetro físicamente hasta que la barra se mueve en la pantalla de la computadora?**
+10. **Describe brevemente el flujo de datos: ¿Qué camino recorre la información desde que giras el potenciómetro físicamente hasta que
+11. la barra se mueve en la pantalla de la computadora?**
+  > Cuando giras el potenciómetro, este cambia su resistencia y genera una variación en el voltaje. Ese valor es leído por el microcontrolador (por ejemplo, Arduino), que lo convierte en un dato digital. Luego, ese dato se envía a través de la red (usando sockets) hacia la computadora. En la computadora, el programa en Python recibe la información, la procesa y actualiza la interfaz gráfica de Tkinter, haciendo que la barra se mueva según el valor recibido.
+
+
+
+
+
+
+
+
+
     > *Tu respuesta aquí*
